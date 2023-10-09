@@ -35,7 +35,12 @@ defmodule Gateways.VacationTest do
 
     test "update_place/2 with valid data updates the place" do
       place = place_fixture()
-      update_attrs = %{location: "some updated location", max_guests: 43, name: "some updated name"}
+
+      update_attrs = %{
+        location: "some updated location",
+        max_guests: 43,
+        name: "some updated name"
+      }
 
       assert {:ok, %Place{} = place} = Vacation.update_place(place, update_attrs)
       assert place.location == "some updated location"
